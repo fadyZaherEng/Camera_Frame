@@ -85,32 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            SizedBox(
-              width: 350,
-              height: 160,
-              child: ClipRRect(
-                child: OverflowBox(
-                  maxHeight: screenratio > previewratio
-                      ? screenh
-                      : screenw / previeww * previewh,
-                  maxWidth: screenratio > previewratio
-                      ? screenh / previewh * previeww
-                      : screenw,
-                  child: AspectRatio(
-                    aspectRatio: 1 / controller.value.aspectRatio,
-                    child: CameraPreview(
-                      controller,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            if (imagePath != "")
-              SizedBox(
-                width: 350,
+            Center(
+              child: SizedBox(
+                width: 300,
                 height: 160,
                 child: ClipRRect(
                   child: OverflowBox(
@@ -121,11 +98,36 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? screenh / previewh * previeww
                         : screenw,
                     child: AspectRatio(
-                      aspectRatio: 1 / controller.value.aspectRatio,
+                      aspectRatio: 1 / controller.value.aspectRatio + 0.05,
+                      child: CameraPreview(
+                        controller,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            if (imagePath != "")
+              SizedBox(
+                width: 300,
+                height: 160,
+                child: ClipRRect(
+                  child: OverflowBox(
+                    maxHeight: screenratio > previewratio
+                        ? screenh
+                        : screenw / previeww * previewh,
+                    maxWidth: screenratio > previewratio
+                        ? (screenh / previewh) * previeww
+                        : screenw,
+                    child: AspectRatio(
+                      aspectRatio: 1 / controller.value.aspectRatio + 0.05,
                       child: Image.file(
                         filterQuality: FilterQuality.high,
                         width: 350,
-                        height: 160,
+                        height: 170,
                         File(imagePath),
                       ),
                     ),

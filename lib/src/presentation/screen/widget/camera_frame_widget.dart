@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 
 class CameraFrameWidget extends StatefulWidget {
   CameraController controller;
-  CameraFrameWidget({required this.controller, super.key});
+
+  CameraFrameWidget({
+    required this.controller,
+    super.key,
+  });
 
   @override
   State<CameraFrameWidget> createState() => _CameraFrameWidgetState();

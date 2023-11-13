@@ -6,8 +6,12 @@ import 'package:flutter/material.dart';
 class CameraViewWidget extends StatefulWidget {
   CameraController controller;
   String imagePath;
-  CameraViewWidget(
-      {required this.controller, required this.imagePath, super.key});
+
+  CameraViewWidget({
+    required this.controller,
+    required this.imagePath,
+    super.key,
+  });
 
   @override
   State<CameraViewWidget> createState() => _CameraViewWidgetState();

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print, library_private_types_in_public_api
 
 import 'package:camera/camera.dart';
-import 'package:camera_frame/src/presentation/bloc/camera_frame_bloc/camera_frame_bloc.dart';
+import 'package:camera_frame/src/presentation/bloc/camera_frame/camera_frame_bloc.dart';
 import 'package:camera_frame/src/presentation/screen/camera_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

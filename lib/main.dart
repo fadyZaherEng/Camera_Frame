@@ -120,8 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       aspectRatio: 1 / controller!.value.aspectRatio,
                       child: Image.file(
                         isAntiAlias: true,
-                        width: 380,
-                        height: 180,
+                        width: 350,
+                        height: 160,
                         File(imagePath),
                       ),
                     ),

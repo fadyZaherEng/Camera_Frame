@@ -38,6 +38,8 @@ dependencies:
   camera:
   path_provider:
   path:
+  flutter_bloc:
+  bloc:
 
 dev_dependencies:
   flutter_test:

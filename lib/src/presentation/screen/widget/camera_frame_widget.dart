@@ -42,9 +42,7 @@ class _CameraFrameWidgetState extends State<CameraFrameWidget> {
                 : screenw,
             child: AspectRatio(
               aspectRatio: 1 / widget.controller.value.aspectRatio + 0.05,
-              child: CameraPreview(
-                widget.controller,
-              ),
+              child: CameraPreview(widget.controller),
             ),
           ),
         ),

@@ -22,7 +22,6 @@ class CameraFrameBloc extends Bloc<CameraFrameEvent, CameraFrameState> {
       final image = await event.cameraController.takePicture();
       emit(CameraFrameTakePhotoSuccessState(image.path));
     } catch (e) {
-      print(e);
       emit(CameraFrameTakePhotoErrorState(e.toString()));
     }
   }

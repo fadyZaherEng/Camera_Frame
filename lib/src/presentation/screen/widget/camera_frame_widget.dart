@@ -30,7 +30,7 @@ class _CameraFrameWidgetState extends State<CameraFrameWidget> {
     final previewratio = previewh / previeww;
     return Center(
       child: SizedBox(
-        width: 300,
+        width: 280,
         height: 160,
         child: ClipRRect(
           child: OverflowBox(
@@ -41,7 +41,7 @@ class _CameraFrameWidgetState extends State<CameraFrameWidget> {
                 ? screenh / previewh * previeww
                 : screenw,
             child: AspectRatio(
-              aspectRatio: 1 / widget.controller.value.aspectRatio + 0.05,
+              aspectRatio: 1 / widget.controller.value.aspectRatio + 0.04,
               child: CameraPreview(widget.controller),
             ),
           ),

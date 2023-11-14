@@ -34,7 +34,7 @@ class _CameraViewWidgetState extends State<CameraViewWidget> {
     final previewratio = previewh / previeww;
     return Center(
       child: SizedBox(
-        width: 300,
+        width: 280,
         height: 160,
         child: ClipRRect(
           child: OverflowBox(
@@ -47,10 +47,11 @@ class _CameraViewWidgetState extends State<CameraViewWidget> {
             child: AspectRatio(
               aspectRatio: 1 / widget.controller.value.aspectRatio + 0.05,
               child: Image.file(
+                fit: BoxFit.fill,
                 filterQuality: FilterQuality.high,
-                width: 300,
-                height: 160,
-                File(widget.imagePath),
+                File(
+                  widget.imagePath,
+                ),
               ),
             ),
           ),

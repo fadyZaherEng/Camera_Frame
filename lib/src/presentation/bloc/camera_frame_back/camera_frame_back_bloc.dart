@@ -1,21 +1,20 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'dart:async';
 
+import 'package:bloc/bloc.dart';
 import 'package:camera/camera.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
-part 'camera_frame_event.dart';
-part 'camera_frame_state.dart';
+part 'camera_frame_back_event.dart';
+part 'camera_frame_back_state.dart';
 
-class CameraFrameBloc extends Bloc<CameraFrameEvent, CameraFrameState> {
-  CameraFrameBloc() : super(CameraFrameInitial()) {
+class CameraFrameBackBloc
+    extends Bloc<CameraFrameBackEvent, CameraFrameBackState> {
+  CameraFrameBackBloc() : super(CameraFrameBackInitial()) {
     on<CameraTakePhotoEvent>(_onCameraTakePhotoEvent);
   }
 
   FutureOr<void> _onCameraTakePhotoEvent(
-      CameraTakePhotoEvent event, Emitter<CameraFrameState> emit) async {
+      CameraTakePhotoEvent event, Emitter<CameraFrameBackState> emit) async {
     emit(CameraFrameTakePhotoLoadingState());
     try {
       event.cameraController.setFlashMode(FlashMode.off);

@@ -1,24 +1,25 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:camera/camera.dart';
-import 'package:camera_frame/src/presentation/bloc/camera_frame/camera_frame_bloc.dart';
-import 'package:camera_frame/src/presentation/screen/widget/camera_frame_widget.dart';
-import 'package:camera_frame/src/presentation/screen/widget/camera_view_widget.dart';
+import 'package:camera_frame/src/presentation/bloc/camera_frame_back/camera_frame_back_bloc.dart';
+import 'package:camera_frame/src/presentation/screen/card_back/widget/camera_frame_widget.dart';
+import 'package:camera_frame/src/presentation/screen/card_back/widget/camera_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CameraFrame extends StatefulWidget {
+class CameraFrameBackScreen extends StatefulWidget {
   dynamic cameras;
-  CameraFrame({Key? key, required this.cameras}) : super(key: key);
+  CameraFrameBackScreen({Key? key, required this.cameras}) : super(key: key);
   @override
-  _CameraFrameState createState() => _CameraFrameState();
+  _CameraFrameBackScreenState createState() => _CameraFrameBackScreenState();
 }
 
-class _CameraFrameState extends State<CameraFrame> {
+class _CameraFrameBackScreenState extends State<CameraFrameBackScreen> {
   CameraController? _controller;
   String _imagePath = "";
 
-  CameraFrameBloc get _bloc => BlocProvider.of<CameraFrameBloc>(context);
+  CameraFrameBackBloc get _bloc =>
+      BlocProvider.of<CameraFrameBackBloc>(context);
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _CameraFrameState extends State<CameraFrame> {
         body: Container(),
       );
     }
-    return BlocConsumer<CameraFrameBloc, CameraFrameState>(
+    return BlocConsumer<CameraFrameBackBloc, CameraFrameBackState>(
       listener: (context, state) {
         if (state is CameraFrameTakePhotoSuccessState) {
           _imagePath = state.image;
